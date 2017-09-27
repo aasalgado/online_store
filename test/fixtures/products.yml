@@ -3,15 +3,13 @@
 one:
   category: MyString
   name: MyString
-  size: MyString
   color: MyString
-  price: MyString
+  price: 1
   brand: MyString
 
 two:
   category: MyString
   name: MyString
-  size: MyString
   color: MyString
-  price: MyString
+  price: 1
   brand: MyString

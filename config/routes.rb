@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
   root 'users#index'
   #resources :users
   get '/users' => 'users#index', as: :users
-
 
   get '/users/new' => 'users#new', as: :new_user
 
@@ -24,5 +17,7 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy', as: :logout
   resources :sessions, only: [:new, :create]
+
+  resources :products, only: [:show]
 
 end

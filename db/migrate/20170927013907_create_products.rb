@@ -1,11 +1,10 @@
-class CreateMerchandises < ActiveRecord::Migration[5.1]
+class CreateProducts < ActiveRecord::Migration[5.1]
   def change
-    create_table :merchandises do |t|
+    create_table :products do |t|
       t.string :category
       t.string :name
-      t.string :size
       t.string :color
-      t.string :price
+      t.integer :price
       t.string :brand
 
       t.timestamps

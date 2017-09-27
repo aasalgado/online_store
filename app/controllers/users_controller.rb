@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :authorize, only: [:show]
-  
+
   def index
+    @products = Product.all
   end
 
   def show
