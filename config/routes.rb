@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'users#index'
-  #resources :users
+  root 'products#index'
+  
   get '/users' => 'users#index', as: :users
 
   get '/users/new' => 'users#new', as: :new_user
@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
 
   resources :products, only: [:show]
+
+  resources :order_items
 
 end

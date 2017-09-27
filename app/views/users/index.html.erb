@@ -2,8 +2,7 @@
 
 <ul>
 <% @products.each do |r| %>
-   <li><%= link_to <%= r.category %>, product_path(@sandwich.user) %> => color: <%+ r.color %> price: $<%= r.price %> </li>
+<li><%= link_to r.category, product_path(r) %> <%= r.color %> $<%= r.price %>.00</li>
   <% end %>
 </ul>
-
-<%= link_to @sandwich.user.name, user_path(@sandwich.user) %>
+      

@@ -15,12 +15,6 @@
         <%= link_to "Login", new_session_path %>
       <% end %>
 
-      <% if logged_in? %>
-      <%= link_to "Your Info", logout_path, {method: "DELETE"} %>
-      <% else %>
-        <%= link_to "Login", new_session_path %>
-      <% end %>
-
       <%= render 'layouts/partials/flash' %>
       
 <div class = "container">
