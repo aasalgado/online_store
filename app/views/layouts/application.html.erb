@@ -11,6 +11,8 @@
   <body>
       <% if logged_in? %>
       <%= link_to "Logout", logout_path, {method: "DELETE"} %>
+      <%= link_to "View Cart", cart_path %>
+      <%= link_to "Home", root_path %>
       <% else %>
         <%= link_to "Login", new_session_path %>
       <% end %>
