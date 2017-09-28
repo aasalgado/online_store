@@ -1,7 +1,10 @@
 <%= link_to 'Back to Home Page', root_path %>
 
 <h1><%= @user.name %></h1>
-<p><%= @user.age %></p>
+<p>Email: <%= @user.email %></p>
+<p>Age: <%= @user.age %></p>
+
+
 
 <%= link_to 'Edit Profile', edit_user_path %>
 <%= link_to 'Delete', user_path, method: 'delete'  %>

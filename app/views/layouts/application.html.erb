@@ -12,11 +12,11 @@
       <% if logged_in? %>
       <%= link_to "Logout", logout_path, {method: "DELETE"} %>
       <%= link_to "View Cart", cart_path %>
-      <%= link_to "Home", root_path %>
+      <%= link_to "Account", user_path(current_user) %>
       <% else %>
         <%= link_to "Login", new_session_path %>
       <% end %>
-
+      <%= link_to "Home", root_path %>
       <%= render 'layouts/partials/flash' %>
       
 <div class = "container">

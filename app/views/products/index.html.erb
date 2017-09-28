@@ -1,13 +1,27 @@
-<% @products.each do |product| %>
-  <div class="product-container">
-      <p><%= product.category %> | <%= number_to_currency product.price %>
-        <% if logged_in? %>
-        <%= form_for @order_item do |f| %>
-            <%= f.hidden_field :product_id, value: product.id %>
-            <%= f.number_field :quantity, value: 1 %>
-            <%= f.submit "Add to cart" %>
-          <% end %>
-        <% end %></p>
 
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="product-container col-4">
+          <p> 
+            <figure class="figure">
+                <img class="figure-img img-fluid rounded" src="<%= product.img %>" alt="photo" style="width: 340px">
+                <figcaption class="figure-caption">
+                    <%= product.name %> | <%= product.color %> <br/>
+                    Regular Price: <%= number_to_currency product.price %>
+                  </figcaption>
+                </figure>
+                <% if logged_in? %>
+                <%= form_for @order_item do |f| %>
+                    <%= f.hidden_field :product_id, value: product.id %>
+                    Qty: <%= f.number_field :quantity, value: 1, class:"box" %> 
+                    <%= f.submit "Add to cart" %>
+                  <% end %>
+                <% end %>
+              
+          </p>
+
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+   
