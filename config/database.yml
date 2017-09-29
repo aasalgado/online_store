@@ -24,3 +24,5 @@ test:
 production:
   <<: *default
   database: shirt_production
+  usermame: shirt
+  password: <%= ENV['ONLINE_STORE_DATABASE_TRACKER'] %>

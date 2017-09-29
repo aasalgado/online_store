@@ -10,45 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928011703) do
+ActiveRecord::Schema.define(version: 20170929161411) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "quantity"
+    t.bigint "product_id"
+    t.bigint "order_id"
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "total_price"
     t.string "status"
+    t.float "total_price"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "category"
-    t.string "name"
-    t.string "color"
     t.integer "price"
+    t.string "name"
+    t.string "category"
+    t.string "color"
     t.string "brand"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "img"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "age"
+    t.string "age"
     t.string "email"
     t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "users"
 end
