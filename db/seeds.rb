@@ -30,3 +30,5 @@ Product.find_or_create_by(category:"T-Shirt", name:"Brandon Tee", color:"Blue", 
 Product.find_or_create_by(category:"T-Shirt", name:"FFX12AMRUN Benzy Tee", color:"Light Blue", price: 20, brand: "Oshenta", img:"https://images.fivefourclub.com/images.fivefourclub.com/images/resized_images/1500_1500_benzylbl-597fc4369a667.jpg" )
 
 Product.find_or_create_by(category:"T-Shirt", name:"Ronaldo Tee", color:"Heather Gray", price: 22, brand: "Grand AC", img:"https://images.fivefourclub.com/images.fivefourclub.com/images/resized_images/1500_1500_ronaldohgr-596d52352a106.jpg" )
+
+#  hello
